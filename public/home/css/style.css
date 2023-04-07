@@ -14,6 +14,10 @@ body {
   padding: 70px 0;
 }
 
+#login
+{
+  margin-right: 10px;
+}
 .layout_padding2 {
   padding: 75px 0;
 }
@@ -1119,8 +1123,8 @@ form input[type="submit"]:focus {
     font-size: 15px;
     font-weight: 400;
 }
-
+/* 
 http://kute-themes.com/html/boutique/html/index.html
 https://template.hasthemes.com/noraure/noraure/index.html
-https://preview.hasthemes.com/xoss-preview/xoss/index.html
+https://preview.hasthemes.com/xoss-preview/xoss/index.html */
 

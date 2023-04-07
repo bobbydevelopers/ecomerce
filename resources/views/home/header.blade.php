@@ -49,6 +49,7 @@
                         <li class="nav-item">
                            <a class="nav-link" href="{{route('blog')}}">Blog</a>
                         </li>
+
                         <li class="nav-item">
                            <a class="nav-link" href="{{route('contact')}}">Contact</a>
                         </li>
@@ -59,13 +60,23 @@
                            </button>
                         </form>
 
-                        <li class="">
-                           <a class="btn btn-secondary" href="{{route('contact')}}">LOGIN</a>
+                        @if (Route::has('login'))
+
+                    @auth
+                    <li class="nav-item">
+                           <a class="btn btn-secondary" href="{{route('contact')}}">Logout</a> 
+                        </li>
+                    @else
+                    <li class="nav-item" id="login">
+                           <a class="btn btn-secondary" href="{{route('login')}}">Login</a>
+                        </li>                        
+                        <li class="nav-item">
+                           <a class="btn btn-secondary" href="{{route('register')}}">Signup</a>
                         </li>
 
-                        <li class="nav-item">
-                           <a class="btn btn-primary" href="{{route('contact')}}">SIGNUP</a>
-                        </li>
+                    @endauth
+          
+            @endif
 
                      </ul>
                   </div>

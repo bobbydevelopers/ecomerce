@@ -22,12 +22,12 @@
                      <div class="widget_menu">
                         <h3>Menu</h3>
                         <ul>
-                           <li><a href="#">Home</a></li>
-                           <li><a href="#">About</a></li>
+                           <li><a href="{{route('home')}}">Home</a></li>
+                           <li><a href="{{route('about')}}">About</a></li>
                            <li><a href="#">Services</a></li>
-                           <li><a href="#">Testimonial</a></li>
-                           <li><a href="#">Blog</a></li>
-                           <li><a href="#">Contact</a></li>
+                           <li><a href="{{route('testimonial')}}">Testimonial</a></li>
+                           <li><a href="{{route('blog')}}">Blog</a></li>
+                           <li><a href="{{route('contact')}}">Contact</a></li>
                         </ul>
                      </div>
                   </div>
@@ -37,8 +37,8 @@
                         <ul>
                            <li><a href="#">Account</a></li>
                            <li><a href="#">Checkout</a></li>
-                           <li><a href="#">Login</a></li>
-                           <li><a href="#">Register</a></li>
+                           <li><a href="{{route('login')}}">Login</a></li>
+                           <li><a href="{{route('register')}}">Register</a></li>
                            <li><a href="#">Shopping</a></li>
                            <li><a href="#">Widget</a></li>
                         </ul>

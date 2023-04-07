@@ -30,6 +30,10 @@ Route::middleware([
 
 Route::get('redirect',[HomeController::class,'redirect']);
 
+
+
+
+
 Route::get('about',function(){return view('home.about');})->name('about');
 Route::get('product',function(){return view('home.product');})->name('product');
 Route::get('contact',function(){return view('home.contact');})->name('contact');
