@@ -1,3 +1,15 @@
-<x-app-layout>
+@include('admin.header')
+  <body>
+@include('admin.sidebar')
 
-</x-app-layout>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_navbar.html -->
+        @include('admin.navbar')
+
+        <!-- partial -->
+        
+        <div class="main-panel">
+        @include('admin.body')
+          <!-- content-wrapper ends -->
+ @include('admin.footer')

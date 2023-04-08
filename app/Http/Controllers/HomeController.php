@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -21,7 +22,14 @@ class HomeController extends Controller
 
         else
         {
-            return view('dashboard');
+            return view('admin.home');
         }
+    }
+
+
+    public function addcategory(Request $request)
+    {
+
+        return view('admin.category');
     }
 }

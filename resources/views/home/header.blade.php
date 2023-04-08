@@ -60,13 +60,19 @@
                            </button>
                         </form>
 
+
                         @if (Route::has('login'))
 
-                    @auth
-                    <li class="nav-item">
-                           <a class="btn btn-secondary" href="{{route('contact')}}">Logout</a> 
+                        @auth
+                        
+                    <li class="nav-item" >
+                    <a class="btn btn-secondary" href="{{route('login')}}">Login</a>
+
                         </li>
-                    @else
+
+                        @else
+
+
                     <li class="nav-item" id="login">
                            <a class="btn btn-secondary" href="{{route('login')}}">Login</a>
                         </li>                        
@@ -74,10 +80,9 @@
                            <a class="btn btn-secondary" href="{{route('register')}}">Signup</a>
                         </li>
 
-                    @endauth
-          
-            @endif
+                        @endauth
 
+                       @endif
                      </ul>
                   </div>
                </nav>
