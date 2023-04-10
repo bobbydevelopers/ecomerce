@@ -59,6 +59,16 @@
             <span class="nav-link">Navigation</span>
           </li>
 
+          
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('category')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Category</span>
+            </a>
+          </li>
+          
 
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{url('add_product')}}">
@@ -69,8 +79,9 @@
             </a>
           </li>
 
+
           <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{url('show_product')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -81,17 +92,6 @@
 
 
 
-
-
-
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('category')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-              <span class="menu-title">Category</span>
-            </a>
-          </li>
  
         </ul>
       </nav>

@@ -41,14 +41,21 @@ Route::get('testimonial',function(){return view('home.testimonial');})->name('te
 
 
 
-Route::get('category',[AdminController::class,'index'])->name('category');
-Route::post('category',[AdminController::class,'addcategory'])->name('category');
-Route::get('delete/{id}',[AdminController::class,'delete']);
+Route::get('category',[AdminController::class,'view_category'])->name('category');
+Route::post('category',[AdminController::class,'add_category'])->name('category');
+Route::get('delete/{id}',[AdminController::class,'delete_category']);
 
 
 
 
 Route::get('add_product',[AdminController::class,'view_product']);
 Route::post('add_product',[AdminController::class,'add_product']);
+Route::get('show_product',[AdminController::class,'show_product']);
+Route::get('delete_product/{id}',[AdminController::class,'delete_product']);
+Route::get('update_product/{id}',[AdminController::class,'update_product']);
+Route::post('update_product_confirm/{id}',[AdminController::class,'update_product_confirm']);
+
+
+
 
 

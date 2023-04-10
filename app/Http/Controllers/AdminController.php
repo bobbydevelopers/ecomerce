@@ -10,13 +10,13 @@ use App\Models\Product;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function view_category()
     {
         $category = category::all();
         return view('admin.category',['category'=>$category]);
     }
 
-    public function addcategory(Request $request)
+    public function add_category(Request $request)
     {
         $category = new Category();
         $category->category_title = $request->category_title;
@@ -29,7 +29,7 @@ class AdminController extends Controller
 
     }
     
-    public function delete($id)
+    public function delete_category($id)
     {
         $data = category::find($id);
         $data->delete();
@@ -45,7 +45,7 @@ class AdminController extends Controller
     public function view_product()
     {
         $category = category::all();
-        return view('admin.product',['category'=>$category]);
+        return view('admin.add_product',['category'=>$category]);
     }
 
     
@@ -74,4 +74,58 @@ class AdminController extends Controller
 
     }
 
+
+    public function show_product()
+    {
+        $product = product::all();
+        return view('admin.show_product',['product'=>$product]);
+
+    }
+
+
+    public function delete_product($id)
+    {
+        $data = product::find($id);
+        $data->delete();
+        return redirect()->back();
+
+    }
+
+
+    
+    public function update_product($id)
+    {
+        $data = product::find($id);
+        $category = category::all();
+        return view('admin.update_product',['data'=>$data,'category'=>$category]);
+    }
+
+
+    public function update_product_confirm($id,Request $request)
+    {
+        $product = product::find($id);
+        
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->category = $request->category;
+        $product->price = $request->price;
+        $product->discount = $request->discount;
+         
+        $image = $request->image;
+        if($image)
+        {
+        $imagename = time().'.'.$image->getClientOriginalExtension();
+        $request->image->move('product',$imagename);
+        $product->image = $imagename;
+        }    
+       $product->save();
+        return redirect()->back();
+
+    }
+
+
+
+
+
 }
+
