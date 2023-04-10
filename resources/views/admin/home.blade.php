@@ -1,5 +1,4 @@
 @include('admin.header')
-  <body>
 @include('admin.sidebar')
 
       <!-- partial -->

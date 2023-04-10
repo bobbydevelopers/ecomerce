@@ -3,18 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\HomeController;
 use App\Http\controllers\EmployeeController;
+use App\Http\controllers\AdminController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 Route::get('/', function () {
     return view('home.homepage');
@@ -49,6 +41,14 @@ Route::get('testimonial',function(){return view('home.testimonial');})->name('te
 
 
 
-Route::get('addcategory',[HomeController::class,'addcategory'])->name('addcategory');
-Route::post('addcategory',[HomeController::class,'addcategory'])->name('addcategory');
+Route::get('category',[AdminController::class,'index'])->name('category');
+Route::post('category',[AdminController::class,'addcategory'])->name('category');
+Route::get('delete/{id}',[AdminController::class,'delete']);
+
+
+
+
+Route::get('add_product',[AdminController::class,'view_product']);
+Route::post('add_product',[AdminController::class,'add_product']);
+
 

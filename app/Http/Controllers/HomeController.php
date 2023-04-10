@@ -27,9 +27,5 @@ class HomeController extends Controller
     }
 
 
-    public function addcategory(Request $request)
-    {
 
-        return view('admin.category');
-    }
 }
