@@ -8,9 +8,7 @@ use App\Http\controllers\AdminController;
 
 
 
-Route::get('/', function () {
-    return view('home.homepage');
-})->name('home');
+Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -37,6 +35,7 @@ Route::get('product',function(){return view('home.product');})->name('product');
 Route::get('contact',function(){return view('home.contact');})->name('contact');
 Route::get('blog',function(){return view('home.blog');})->name('blog');
 Route::get('testimonial',function(){return view('home.testimonial');})->name('testimonial');
+Route::get('product_details/{id}',[HomeController::class,'product_details']);
 
 
 
@@ -53,7 +52,7 @@ Route::post('add_product',[AdminController::class,'add_product']);
 Route::get('show_product',[AdminController::class,'show_product']);
 Route::get('delete_product/{id}',[AdminController::class,'delete_product']);
 Route::get('update_product/{id}',[AdminController::class,'update_product']);
-Route::post('update_product_confirm/{id}',[AdminController::class,'update_product_confirm']);
+Route::post('update_product_confirm/{id }',[AdminController::class,'update_product_confirm']);
 
 
 

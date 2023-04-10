@@ -17,8 +17,9 @@
             <form action="{{url('add_product')}}" method="post" enctype="multipart/form-data">
               @csrf
                 Title<input type="text" name="title"><br>
+                
                 Description<input type="text" name="description"><br>
-                <label for="category">Enter YOur Category</label>
+                <label for="category">Enter Your Category</label>
                 <select name="category" id="category">
                   <option value="" selected="">Add a Selected Category Here</option>
                 @foreach($category as $cat)
